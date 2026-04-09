@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>SmileStone Micro</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 90'><path d='M48 2C38 0 24 2 12 8 4 14 1 24 2 38 4 52 14 68 28 85 30 88 32 86 36 78 42 66 52 42 54 22 53 10 48 2 48 2z' fill='%230097a7'/><path d='M52 6C46 10 42 18 44 30 46 42 52 56 60 78 64 86 66 90 68 88 72 80 88 56 96 30 98 14 88 2 68 0 58 0 52 6 52 6z' fill='%2300b8d4'/></svg>">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAArCAYAAAA+EwvjAAAA9ElEQVR42u2ZyxHCMAxE1+6EO/RBCykhFVECLdAH3CklHBgmISG2/CGyYPeU4z6tZI0dh6lO5wGl2h3wdR337vXpzZkHgMtteAewZH4G4aqY1wBYtJBB8/UAFEUAAhDg7wEUj1AmAAC4X5kAAQhAgPyb2Q8k0HeOLaTUPiOA4RTGBEogFLext9w+SwCDreQtVx8A1iue81608bOivQRm5sMArc3DB/PxBFIhFI7TeAu1kMRK9eUzkAJRO4WA+bQh7jvX4p5IP4UkELVSiFQ/vAckCu2K0p0gMF8OEAPJhRCarwcQ0+SfVk3z2wFIQBKNUxT11APHHzSTG7aiZQAAAABJRU5ErkJggg==">
 <style>
 :root{--c:#00b8d4;--ch:#0097a7;--cl:#26c6da;--cd:#006064;--sb:#0d1b2a;--bg:#f4f8fb;--wh:#fff;--bd:#dce6f0;--tx:#0d1b2a;--tl:#5c7080;--ok:#10b981;--inf:#0077b6;--gr:#94a3b8;--sh:0 1px 4px rgba(0,0,0,.06);--rad:10px}
 *{margin:0;padding:0;box-sizing:border-box}
@@ -190,12 +190,12 @@ th,td{padding:10px}
 "use strict";
 var D=document,Q=function(s,p){return(p||D).querySelector(s)};
 
-/* --- SVG LOGO VARIANTS --- */
-var LOGO_COL='<svg width="WW" height="HH" viewBox="0 0 100 90"><path d="M48 2C38 0 24 2 12 8 4 14 1 24 2 38 4 52 14 68 28 85 30 88 32 86 36 78 42 66 52 42 54 22 53 10 48 2 48 2z" fill="#0097a7"/><path d="M52 6C46 10 42 18 44 30 46 42 52 56 60 78 64 86 66 90 68 88 72 80 88 56 96 30 98 14 88 2 68 0 58 0 52 6 52 6z" fill="#00b8d4"/></svg>',
-LOGO_WHT='<svg width="WW" height="HH" viewBox="0 0 100 90"><path d="M48 2C38 0 24 2 12 8 4 14 1 24 2 38 4 52 14 68 28 85 30 88 32 86 36 78 42 66 52 42 54 22 53 10 48 2 48 2z" fill="rgba(255,255,255,.5)"/><path d="M52 6C46 10 42 18 44 30 46 42 52 56 60 78 64 86 66 90 68 88 72 80 88 56 96 30 98 14 88 2 68 0 58 0 52 6 52 6z" fill="rgba(255,255,255,.9)"/></svg>';
+/* --- LOGO (PNG data URI) --- */
+var LOGO_COL='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA6CAYAAAAA0F95AAABR0lEQVR42u2avRWDMAyEZW+SnuyRFRiBiTJCVmCP0GcUUiTvEfJs/Csj0F0J1X06ySpkyKf7Y6baulxpV9068//JNDEuwbwHgmE3Lsm8A4RlNy9clt28xOoTEY3TvCRAq8Zptiqrv2oB5QIAAAAAvQMQCQAAAAAAAAAAAAAAAAAAAFCqW2f4ALyeSAAACI//B8DQGyRAafUXAENvtCZhnQCFEHhb4ABPodXc/24AytrAnYCzQnBciGAT9P6plQIpg9BR/XACFMyDcAucAYKn+vEzoBSC4H0gfggeNQkb1U9/BUog7JGCgPm8Z/BkgzFvD8iF0DIFEdUvW4QkJyHSPJHrVjhHKceW3JcjCebrrcIpaeBsg0Tz9RKQkwaOJIgAkAKiJoQM87wAtmD8tsz3aLm18bYAQsqFUGheDoBUEBWMQxAEQRDRG80dRmStF4qWAAAAAElFTkSuQmCC',
+LOGO_WHT='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAA6CAYAAAAA0F95AAABKElEQVR42u2ayxXDIAwEJZXhAqmDOijQbSin+CXxJ4AxyNbu0bcdjYCDmXaiqpHaJ9DAMPO0+tap+PDyexC4Q3Ez5bdASIfypiMdygeLxVV1XgzwGlWdxeP0v1aAnAcAAAAA/B6AMAAAAAAAAAAAAAAAAAAAAMBnmHm6EkCCAQBgW38iImHmCAOcTn8BwMzRqwnyQyZiBZxdheJ5/zcBeFsD2aEUPUwfL8EjAA0tSFan/9cAD+eBZJCLT9z9ojOgAYR0WwPubsLR9ItvgZMQkrXyVdfg0w5GqSQbrVuQM/1TDyHLJuSWJ9r4V7gmhT9bBivlmz2FC21IVso3M6DShvBIAIUgwsjylwI4gvG5Mu+flnsX7wogA9A8orwZAKUgWhRHEARBEKIXEzZGFOrkceEAAAAASUVORK5CYII=';
 
-function logoCol(w,h){return LOGO_COL.replace('WW',w).replace('HH',h)}
-function logoWht(w,h){return LOGO_WHT.replace('WW',w).replace('HH',h)}
+function logoCol(w,h){return '<img src="'+LOGO_COL+'" width="'+w+'" height="'+h+'" style="display:inline-block;vertical-align:middle">'}
+function logoWht(w,h){return '<img src="'+LOGO_WHT+'" width="'+w+'" height="'+h+'" style="display:inline-block;vertical-align:middle">'}
 
 var state={page:'landing',user:null,filter:'all',search:'',step:1,orderDone:false,selTeeth:[],products:[],aiMode:null,aiText:'',aiParsed:null,aiLoading:false,sideOpen:false,nd:{pn:'',pa:'',pg:'',cat:'',prod:'',col:'',notes:'',lab:'',lbn:'',lbe:'',dl:''}},
 orders=[
